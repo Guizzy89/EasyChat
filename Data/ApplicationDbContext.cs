@@ -1,7 +1,7 @@
 ﻿using EasyChat.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace ProjectName.Data
+namespace EasyChat.Data
 {
     public class ApplicationDbContext : DbContext
     {

@@ -1,0 +1,30 @@
+﻿@page
+@model EasyChat.Pages.IndexModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="container">
+    <h1>Сообщения:</h1>
+    @foreach (var message in Model.Messages)
+    {
+        <div class="message-item">
+            <p><strong>@Html.DisplayFor(m => message.Content)</strong></p>
+            <small>Отправлено: @Html.DisplayFor(m => message.CreatedAt)</small>
+            <a asp-page-handler="Delete" asp-route-id="@message.Id">Удалить</a>
+        </div>
+    }
+
+    <!-- Форма отправки нового сообщения -->
+    <form method="post">
+        <label for="content">Ваше сообщение:</label>
+        <textarea id="content" name="Content"></textarea>
+        <button type="submit">Отправить</button>
+    </form>
+</div>
+
+<style>
+    .message-item {
+        border-bottom: 1px solid lightgray;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+</style>

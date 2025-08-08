@@ -1,4 +1,4 @@
-using ProjectName.Data;
+using EasyChat.Data;
 using EasyChat.Models;
 using Microsoft.EntityFrameworkCore;
 
